@@ -1,5 +1,5 @@
 import React from "react";
-import MainFeed from "./components/mainFeed/MainFeed";
+import Tweet from "./components/tweet/Tweet";
 // as of now, this class is not using App.css
 //import "./App.css";
 
@@ -8,8 +8,10 @@ export default function App() {
   return (
     <div style={tweetContainterCenterWidth}>
       <div>
-        <MainFeed></MainFeed>
-        <MainFeed></MainFeed>
+        <Tweet style={upAndDown}></Tweet>
+        <Tweet></Tweet>
+        <Tweet></Tweet>
+        <Tweet></Tweet>
       </div>
     </div>
   );
@@ -26,5 +28,6 @@ const tweetContainterCenterWidth = {
 
 const upAndDown = {
   backgroundColor: "blue",
-  height: "200px",
+  border: "3px blue",
+  minHeight: "200px",
 };
