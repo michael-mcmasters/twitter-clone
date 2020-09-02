@@ -1,8 +1,17 @@
 import React from "react";
-import { COLORS } from "../constants/Colors.js";
+import { COLORS, MainText } from "../constants/Colors.js";
+import { useTheme, useThemeUpdate } from "../customHooks/ThemeContext.js";
 
 // By making them both lists <li>, instead of items <ul> in a list, they go from left to right
 export default function Tweet() {
+  const darkTheme = useTheme();
+  const toggleTheme = useThemeUpdate();
+  const themeStyles = {
+    color: darkTheme ? "blue" : "red",
+  };
+
+  console.log(darkTheme);
+
   return (
     <div style={container}>
       <div style={headContainer}>
@@ -11,7 +20,7 @@ export default function Tweet() {
         <div style={screenName}>·</div>
         <div style={screenName}>16h</div>
       </div>
-      <div style={body}>hi</div>
+      <div style={body(themeStyles)}>hi</div>
     </div>
   );
 }
@@ -44,8 +53,23 @@ const screenName = {
   color: "#72828f",
 };
 
-const body = {
-  color: COLORS.secondaryTextDark,
-  height: "50px",
-  width: "100px",
-};
+function body(themeStyles) {
+  return { color: themeStyles.color };
+}
+
+// // Would need to pass in theme as a parameter
+// const body = {
+//   color: themeStyles.color,
+// };
+
+// const body = {
+//   //color: COLORS.secondaryTextDark,
+//   color: MainText,
+//   height: "50px",
+//   width: "100px",
+// };
+
+// // If possible, just pass a darkTheme object with the color properties. Instead of this bool.
+// function setName(darkTheme) {
+//   return darkTheme === true ? Color.MainText : Color.MainText;
+// }
