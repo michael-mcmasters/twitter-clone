@@ -22,6 +22,14 @@ export default function Tweet() {
   );
 }
 
+function container2(themeStyle) {
+  return {
+    border: "3px solid #38444d",
+    backgroundColor: "#15202b",
+    height: "200px",
+  };
+}
+
 const container = {
   border: "3px solid #38444d",
   backgroundColor: "#15202b",

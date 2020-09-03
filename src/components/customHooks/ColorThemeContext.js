@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import { Colors } from "../constants/Colors.js";
 
 // Hooks tutorial: https://www.youtube.com/watch?v=5LrDIWkK_Bc
 
@@ -9,11 +10,15 @@ export const SetColorThemeContext = createContext();
 // In App.js, this function is called with <ThemeProvider>
 export function ColorThemeProvider({ children }) {
   const [colorTheme, setColorTheme] = useState({
-    color: "red",
+    color: Colors.lightMode.primary,
   });
 
   function handleSetColorTheme() {
-    setColorTheme({ color: "green" });
+    if (colorTheme.color === "red") {
+      setColorTheme({ color: "green" });
+    } else {
+      setColorTheme({ color: "red" });
+    }
   }
 
   return (
