@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import Tweet from "./components/tweet/Tweet";
+import ColorThemeToggle from "./components/ColorThemeToggle";
 import { ColorThemeProvider } from "./components/customHooks/ColorThemeContext.js";
 // as of now, this class is not using App.css
 //import "./App.css";
@@ -9,16 +10,15 @@ import { ColorThemeProvider } from "./components/customHooks/ColorThemeContext.j
 export default function App() {
   return (
     <div style={tweetsContainer}>
-      <button>MyButton</button>
-      <div>
-        <ColorThemeProvider>
+      <ColorThemeProvider>
+        <ColorThemeToggle></ColorThemeToggle>
+        <div>
           <Tweet style={upAndDown}></Tweet>
           <Tweet></Tweet>
           <Tweet></Tweet>
           <Tweet></Tweet>
-        </ColorThemeProvider>
-      </div>
-      <button>AnotherButton</button>
+        </div>
+      </ColorThemeProvider>
     </div>
   );
 }

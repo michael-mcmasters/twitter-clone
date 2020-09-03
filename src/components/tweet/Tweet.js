@@ -9,8 +9,7 @@ export default function Tweet() {
 
   return (
     <div style={container(colorTheme)}>
-      <button onClick={useContext(SetColorThemeContext)}>Button</button>
-      <div style={headContainer}>
+      <div style={topOfTweetContainer}>
         <div style={name(colorTheme)}>Stephy Garcia</div>
         <div style={screenName(colorTheme)}>@StephyG</div>
         <div style={screenName(colorTheme)}>·</div>
@@ -30,7 +29,7 @@ function container(colorTheme) {
 }
 
 // the top row of a tweet (name, username, how old tweet is)
-const headContainer = {
+const topOfTweetContainer = {
   // How wide row is
   width: "300px",
   // makes grid from left to right
@@ -56,5 +55,5 @@ function screenName(colorTheme) {
 }
 
 function body(colorTheme) {
-  return { color: colorTheme.textPrime };
+  return { color: colorTheme.textPrime, paddingLeft: "10px", margin: "10px" };
 }
