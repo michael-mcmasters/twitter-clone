@@ -6,10 +6,10 @@ import {
 
 // By making them both lists <li>, instead of items <ul> in a list, they go from left to right
 export default function Tweet() {
-  const themeStyles = useContext(ColorThemeContext);
+  const colorTheme = useContext(ColorThemeContext);
 
   return (
-    <div style={container}>
+    <div style={container2(colorTheme)}>
       <button onClick={useContext(SetColorThemeContext)}>Button</button>
       <div style={headContainer}>
         <div style={name}>Stephy Garcia</div>
@@ -17,24 +17,24 @@ export default function Tweet() {
         <div style={screenName}>·</div>
         <div style={screenName}>16h</div>
       </div>
-      <div style={body(themeStyles)}>hey yeah it's ya boi you already know</div>
+      <div style={body(colorTheme)}>hey yeah it's ya boi you already know</div>
     </div>
   );
 }
 
-function container2(themeStyle) {
+function container2(colorTheme) {
   return {
     border: "3px solid #38444d",
-    backgroundColor: "#15202b",
+    backgroundColor: colorTheme.backGround,
     height: "200px",
   };
 }
 
-const container = {
-  border: "3px solid #38444d",
-  backgroundColor: "#15202b",
-  height: "200px",
-};
+// const container = {
+//   border: "3px solid #38444d",
+//   backgroundColor: "#15202b",
+//   height: "200px",
+// };
 
 // the top row of a tweet (name, username, how old tweet is)
 const headContainer = {

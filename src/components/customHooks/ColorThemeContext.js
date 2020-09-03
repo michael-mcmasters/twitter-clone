@@ -9,15 +9,15 @@ export const SetColorThemeContext = createContext();
 
 // In App.js, this function is called with <ThemeProvider>
 export function ColorThemeProvider({ children }) {
-  const [colorTheme, setColorTheme] = useState({
-    color: Colors.lightMode.primary,
-  });
+  const [colorTheme, setColorTheme] = useState(Colors.lightMode);
 
   function handleSetColorTheme() {
-    if (colorTheme.color === "red") {
-      setColorTheme({ color: "green" });
+    if (colorTheme === Colors.lightMode) {
+      setColorTheme(Colors.darkMode);
+      console.log("was light mode");
     } else {
-      setColorTheme({ color: "red" });
+      setColorTheme(Colors.lightMode);
+      console.log("was dark mode");
     }
   }
 
