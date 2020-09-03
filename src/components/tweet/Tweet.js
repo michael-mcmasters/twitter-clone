@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
-import {
-  ColorThemeContext,
-  SetColorThemeContext,
-} from "../customHooks/ColorThemeContext.js";
+import { ColorThemeContext } from "../customHooks/ColorThemeContext.js";
+// each ../ goes up one directory
+import noAvatarEgg from "../../noAvatarEgg.jpg";
 
 export default function Tweet(props) {
   const colorTheme = useContext(ColorThemeContext);
 
   return (
     <div style={container(colorTheme)}>
+      <img src={noAvatarEgg} alt="my description" />
       <div style={topOfTweetContainer}>
         <div style={name(colorTheme)}>{props.name}</div>
         <div style={screenName(colorTheme)}>{props.userName}</div>
@@ -33,7 +33,7 @@ function container(colorTheme) {
 // the top row of a tweet (name, username, how old tweet is)
 const topOfTweetContainer = {
   // How wide row is
-  width: "300px",
+  width: "500px",
   // makes grid from left to right
   display: "flex",
   // space between text from edge of screen

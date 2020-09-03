@@ -9,7 +9,7 @@ export const SetColorThemeContext = createContext();
 
 // Context is technically a functional component.
 export function ColorThemeProvider({ children }) {
-  const [colorTheme, setColorTheme] = useState(COLORS.lightMode);
+  const [colorTheme, setColorTheme] = useState(COLORS.darkMode);
 
   function handleSetColorTheme() {
     if (colorTheme === COLORS.lightMode) {
