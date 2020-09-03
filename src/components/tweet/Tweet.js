@@ -22,7 +22,9 @@ export default function Tweet() {
 
 function container(colorTheme) {
   return {
-    border: "3px solid #38444d",
+    borderLeft: "3px solid #38444d",
+    borderTop: "3px solid #38444d",
+    borderRight: "3px solid #38444d",
     backgroundColor: colorTheme.background,
     height: "200px",
   };

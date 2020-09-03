@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import Tweet from "./components/tweet/Tweet";
+import NavBar from "./components/navBar/NavBar";
 import ColorThemeToggle from "./components/ColorThemeToggle";
 import { ColorThemeProvider } from "./components/customHooks/ColorThemeContext.js";
 // as of now, this class is not using App.css
@@ -9,17 +10,20 @@ import { ColorThemeProvider } from "./components/customHooks/ColorThemeContext.j
 // first <div style> puts tweets category in row. second <div> puts individual tweets in a column
 export default function App() {
   return (
-    <div style={tweetsContainer}>
-      <ColorThemeProvider>
-        <ColorThemeToggle></ColorThemeToggle>
-        <div>
-          <Tweet style={upAndDown}></Tweet>
-          <Tweet></Tweet>
-          <Tweet></Tweet>
-          <Tweet></Tweet>
-        </div>
-      </ColorThemeProvider>
-    </div>
+    <React.Fragment>
+      <NavBar></NavBar>
+      <div style={tweetsContainer}>
+        <ColorThemeProvider>
+          <ColorThemeToggle></ColorThemeToggle>
+          <div>
+            <Tweet style={upAndDown}></Tweet>
+            <Tweet></Tweet>
+            <Tweet></Tweet>
+            <Tweet></Tweet>
+          </div>
+        </ColorThemeProvider>
+      </div>
+    </React.Fragment>
   );
 }
 
