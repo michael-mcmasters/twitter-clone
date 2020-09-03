@@ -20,45 +20,45 @@ import noAvatarEgg from "../../noAvatarEgg.jpg";
 //   );
 // }
 
-function container(colorTheme) {
-  return {
-    borderLeft: "3px solid #38444d",
-    borderTop: "3px solid #38444d",
-    borderRight: "3px solid #38444d",
-    backgroundColor: colorTheme.background,
-    height: "200px",
-  };
-}
+// function container(colorTheme) {
+//   return {
+//     borderLeft: "3px solid #38444d",
+//     borderTop: "3px solid #38444d",
+//     borderRight: "3px solid #38444d",
+//     backgroundColor: colorTheme.background,
+//     height: "200px",
+//   };
+// }
 
-// the top row of a tweet (name, username, how old tweet is)
-const topOfTweetContainer = {
-  // How wide row is
-  width: "500px",
-  // makes grid from left to right
-  display: "flex",
-  // space between text from edge of screen
-  margin: "10px",
-};
+// // the top row of a tweet (name, username, how old tweet is)
+// const topOfTweetContainer = {
+//   // How wide row is
+//   width: "500px",
+//   // makes grid from left to right
+//   display: "flex",
+//   // space between text from edge of screen
+//   margin: "10px",
+// };
 
-function name(colorTheme) {
-  return {
-    paddingLeft: "10px",
-    color: colorTheme.textPrime,
-    fontWeight: "bold",
-  };
-}
+// function name(colorTheme) {
+//   return {
+//     paddingLeft: "10px",
+//     color: colorTheme.textPrime,
+//     fontWeight: "bold",
+//   };
+// }
 
-function screenName(colorTheme) {
-  return {
-    // space between word on left (last word doesn't need it bc there is no word to its right)
-    paddingLeft: "10px",
-    color: colorTheme.textSec,
-  };
-}
+// function screenName(colorTheme) {
+//   return {
+//     // space between word on left (last word doesn't need it bc there is no word to its right)
+//     paddingLeft: "10px",
+//     color: colorTheme.textSec,
+//   };
+// }
 
-function body(colorTheme) {
-  return { color: colorTheme.textPrime, paddingLeft: "10px", margin: "10px" };
-}
+// function body(colorTheme) {
+//   return { color: colorTheme.textPrime, paddingLeft: "10px", margin: "10px" };
+// }
 
 export default function Tweet(props) {
   const colorTheme = useContext(ColorThemeContext);
@@ -79,16 +79,16 @@ export default function Tweet(props) {
   return (
     <div style={tweetContainer(colorTheme)}>
       {/* Left Row */}
-      <span style={imageContainer}>
-        <img style={image} src={noAvatarEgg} alt="my description" />
+      <span style={avatarContainer}>
+        <img style={avatar} src={noAvatarEgg} alt="my description" />
       </span>
       {/* Center and Right Row */}
-      <div>
-        <div style={name(colorTheme)}>{props.name}</div>
-        <div style={screenName(colorTheme)}>{props.userName}</div>
-        <div style={screenName(colorTheme)}>·</div>
-        <div style={screenName(colorTheme)}>{props.timeSincePost}</div>
-      </div>
+      <span style={topContainer(colorTheme)}>
+        <span style={primaryText(colorTheme)}>{props.name}</span>
+        <span style={secondaryText(colorTheme)}>{props.userName}</span>
+        <span style={secondaryText(colorTheme)}>·</span>
+        <span style={secondaryText(colorTheme)}>{props.timeSincePost}</span>
+      </span>
     </div>
   );
 }
@@ -107,18 +107,41 @@ function tweetContainer(colorTheme) {
 }
 
 // How wide the left side of the tweet is where image will be
-const imageContainer = {
+const avatarContainer = {
   display: "flex",
   flexDirection: "column",
-  width: "100px",
-  //border: "3px solid blue",
+  width: "75px",
+  border: "3px solid blue",
 };
 
 // Size of picture
-const image = {
+const avatar = {
   alignSelf: "flex-end",
   height: "25%",
   width: "50%",
-  margin: "10px",
+  margin: "13px",
+  marginRight: "14px",
   //border: "3px solid red",
 };
+
+// top of tweet (name, username, etc)
+function topContainer(colorTheme) {
+  return {
+    marginTop: "10px",
+    color: colorTheme.textPrime,
+  };
+}
+
+function primaryText(colorTheme) {
+  return {
+    fontWeight: "bold",
+    color: colorTheme.textPrime,
+  };
+}
+
+function secondaryText(colorTheme) {
+  return {
+    paddingLeft: "10px",
+    color: colorTheme.textSec,
+  };
+}
