@@ -67,5 +67,3 @@ const row = {
   // centers items on row
   justifyContent: "center",
 };
-
-const tweetContainer = {};
