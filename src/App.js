@@ -1,33 +1,32 @@
 import React, { useEffect } from "react";
 import Tweet from "./components/tweet/Tweet";
-import { MainText } from "./components/constants/Colors.js";
-import { ThemeProvider } from "./components/customHooks/ThemeContext.js";
+import { ColorThemeProvider } from "./components/customHooks/ColorThemeContext.js";
 
 // as of now, this class is not using App.css
 //import "./App.css";
 
 // To visualize CSS in browser, in Chrome inspector go to arrow, components, and hover mouse over classes and their properties
+// first <div style> puts tweets category in row. second <div> puts individual tweets in a column
 export default function App() {
-  useEffect(() => {
-    //MainText = "green";
-  }, []);
   return (
-    <div style={tweetContainterCenterWidth}>
+    <div style={tweetsContainer}>
+      <button>MyButton</button>
       <div>
-        <ThemeProvider>
+        <ColorThemeProvider>
           <Tweet style={upAndDown}></Tweet>
           <Tweet></Tweet>
           <Tweet></Tweet>
           <Tweet></Tweet>
-        </ThemeProvider>
+        </ColorThemeProvider>
       </div>
+      <button>AnotherButton</button>
     </div>
   );
 }
 
 // Div using this container centers tweets on screen.
 // A second div is then used to make objects appear on top of one another.
-const tweetContainterCenterWidth = {
+const tweetsContainer = {
   // makes row left to right
   display: "flex",
   // centers items on row

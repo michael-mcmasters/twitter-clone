@@ -1,26 +1,23 @@
-import React from "react";
-import { COLORS, MainText } from "../constants/Colors.js";
-import { useTheme, useThemeUpdate } from "../customHooks/ThemeContext.js";
+import React, { useContext } from "react";
+import {
+  ColorThemeContext,
+  SetColorThemeContext,
+} from "../customHooks/ColorThemeContext.js";
 
 // By making them both lists <li>, instead of items <ul> in a list, they go from left to right
 export default function Tweet() {
-  const darkTheme = useTheme();
-  const toggleTheme = useThemeUpdate();
-  const themeStyles = {
-    color: darkTheme ? "blue" : "red",
-  };
-
-  console.log(darkTheme);
+  const themeStyles = useContext(ColorThemeContext);
 
   return (
     <div style={container}>
+      <button onClick={useContext(SetColorThemeContext)}>Button</button>
       <div style={headContainer}>
-        <div style={name}>Peter Parker</div>
-        <div style={screenName}>@peterparker89</div>
+        <div style={name}>Stephy Garcia</div>
+        <div style={screenName}>@StephyG</div>
         <div style={screenName}>·</div>
         <div style={screenName}>16h</div>
       </div>
-      <div style={body(themeStyles)}>hi</div>
+      <div style={body(themeStyles)}>hey yeah it's ya boi you already know</div>
     </div>
   );
 }
