@@ -6,44 +6,6 @@ import { ColorThemeProvider } from "./components/customHooks/ColorThemeContext.j
 // as of now, this class is not using App.css
 //import "./App.css";
 
-// To visualize CSS in browser, in Chrome inspector go to arrow, components, and hover mouse over classes and their properties
-// first <div style> puts tweets category in row. second <div> puts individual tweets in a column
-// export default function App() {
-//   return (
-//     <React.Fragment>
-//       <div style={{ border: "3px solid #38444d" }}>
-//         <NavBar></NavBar>
-//       </div>
-//       <div style={tweetsContainer}>
-//         <ColorThemeProvider>
-//           <ColorThemeToggle></ColorThemeToggle>
-//           <div>
-//             <Tweet style={upAndDown}></Tweet>
-//             <Tweet></Tweet>
-//             <Tweet></Tweet>
-//             <Tweet></Tweet>
-//           </div>
-//         </ColorThemeProvider>
-//       </div>
-//     </React.Fragment>
-//   );
-// }
-
-// // Div using this container centers tweets on screen.
-// // A second div is then used to make objects appear on top of one another.
-// const tweetsContainer = {
-//   // makes row left to right
-//   display: "flex",
-//   // centers items on row
-//   justifyContent: "center",
-// };
-
-// const upAndDown = {
-//   backgroundColor: "blue",
-//   border: "3px blue",
-//   minHeight: "200px",
-// };
-
 export default function App() {
   const tweets = [
     {
@@ -56,19 +18,19 @@ export default function App() {
       id: "1",
       name: "Chris Beardsley",
       userName: "ChrisBFriedChicken",
-      timeSincePost: "16h",
+      timeSincePost: "8h",
     },
     {
       id: "2",
       name: "Nathan McMasters",
       userName: "NateMcMasters",
-      timeSincePost: "16h",
+      timeSincePost: "2h",
     },
     {
       id: "3",
       name: "Dayman McMasters",
       userName: "DaymanKnight",
-      timeSincePost: "16h",
+      timeSincePost: "7h",
     },
   ];
 
@@ -82,11 +44,13 @@ export default function App() {
           <ColorThemeToggle></ColorThemeToggle>
           <div>
             {/* Center row ... Items here go in column up and down */}
-
-            <Tweet></Tweet>
-            <Tweet></Tweet>
-            <Tweet></Tweet>
-            <Tweet></Tweet>
+            {tweets.map((tweet) => (
+              <Tweet
+                name={tweet.name}
+                userName={tweet.userName}
+                timeSincePost={tweet.timeSincePost}
+              ></Tweet>
+            ))}
           </div>
           {/* Right row */}
           <div>Third</div>
@@ -98,7 +62,9 @@ export default function App() {
 }
 
 const row = {
+  // forces row to go left to right instead of up and down
   display: "flex",
+  // centers items on row
   justifyContent: "center",
 };
 

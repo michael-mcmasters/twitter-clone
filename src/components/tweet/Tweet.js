@@ -4,16 +4,16 @@ import {
   SetColorThemeContext,
 } from "../customHooks/ColorThemeContext.js";
 
-export default function Tweet() {
+export default function Tweet(props) {
   const colorTheme = useContext(ColorThemeContext);
 
   return (
     <div style={container(colorTheme)}>
       <div style={topOfTweetContainer}>
-        <div style={name(colorTheme)}>Stephy Garcia</div>
-        <div style={screenName(colorTheme)}>@StephyG</div>
+        <div style={name(colorTheme)}>{props.name}</div>
+        <div style={screenName(colorTheme)}>{props.userName}</div>
         <div style={screenName(colorTheme)}>·</div>
-        <div style={screenName(colorTheme)}>16h</div>
+        <div style={screenName(colorTheme)}>{props.timeSincePost}</div>
       </div>
       <div style={body(colorTheme)}>hey yeah it's ya boi you already know</div>
     </div>
