@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import { Colors } from "../constants/Colors.js";
+import { COLORS } from "../constants/Colors.js";
 
 // Hooks tutorial: https://www.youtube.com/watch?v=5LrDIWkK_Bc
 
@@ -7,17 +7,15 @@ import { Colors } from "../constants/Colors.js";
 export const ColorThemeContext = createContext();
 export const SetColorThemeContext = createContext();
 
-// In App.js, this function is called with <ThemeProvider>
+// Context is technically a functional component.
 export function ColorThemeProvider({ children }) {
-  const [colorTheme, setColorTheme] = useState(Colors.lightMode);
+  const [colorTheme, setColorTheme] = useState(COLORS.lightMode);
 
   function handleSetColorTheme() {
-    if (colorTheme === Colors.lightMode) {
-      setColorTheme(Colors.darkMode);
-      console.log("was light mode");
+    if (colorTheme === COLORS.lightMode) {
+      setColorTheme(COLORS.darkMode);
     } else {
-      setColorTheme(Colors.lightMode);
-      console.log("was dark mode");
+      setColorTheme(COLORS.lightMode);
     }
   }
 

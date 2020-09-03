@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Tweet from "./components/tweet/Tweet";
 import { ColorThemeProvider } from "./components/customHooks/ColorThemeContext.js";
-
 // as of now, this class is not using App.css
 //import "./App.css";
 

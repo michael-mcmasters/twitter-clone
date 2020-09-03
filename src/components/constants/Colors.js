@@ -1,17 +1,13 @@
 // Can't use default imports for constants.
-//
-
-// dark: backGround: "#15202b",
-
-export const Colors = {
-  darkMode: {
-    backGround: "red",
-    textPrime: "#d8dadc",
-    textSec: "",
-  },
+export const COLORS = {
   lightMode: {
-    backGround: "yellow",
-    textPrime: "blue",
-    textSec: "",
+    background: "white",
+    textPrime: "#222527",
+    textSec: "#b7bfc6",
+  },
+  darkMode: {
+    background: "#15202b",
+    textPrime: "#d8dadc",
+    textSec: "#8796a0",
   },
 };
