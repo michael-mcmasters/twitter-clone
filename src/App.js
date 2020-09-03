@@ -45,6 +45,33 @@ import { ColorThemeProvider } from "./components/customHooks/ColorThemeContext.j
 // };
 
 export default function App() {
+  const tweets = [
+    {
+      id: "0",
+      name: "Stephy Garcia",
+      userName: "StephyG",
+      timeSincePost: "16h",
+    },
+    {
+      id: "1",
+      name: "Chris Beardsley",
+      userName: "ChrisBFriedChicken",
+      timeSincePost: "16h",
+    },
+    {
+      id: "2",
+      name: "Nathan McMasters",
+      userName: "NateMcMasters",
+      timeSincePost: "16h",
+    },
+    {
+      id: "3",
+      name: "Dayman McMasters",
+      userName: "DaymanKnight",
+      timeSincePost: "16h",
+    },
+  ];
+
   return (
     <React.Fragment>
       <ColorThemeProvider>
@@ -55,6 +82,7 @@ export default function App() {
           <ColorThemeToggle></ColorThemeToggle>
           <div>
             {/* Center row ... Items here go in column up and down */}
+
             <Tweet></Tweet>
             <Tweet></Tweet>
             <Tweet></Tweet>
