@@ -1,13 +1,14 @@
 import React, { createContext, useState } from "react";
 import { COLORS } from "../constants/Colors.js";
 
-// Hooks tutorial: https://www.youtube.com/watch?v=5LrDIWkK_Bc
+// useContext() and custom hooks tutorial: https://www.youtube.com/watch?v=5LrDIWkK_Bc
 
-// When these are "called", they reference the <> tags below.
+// When these are "called", they reference the <> provider tags below.
 export const ColorThemeContext = createContext();
 export const SetColorThemeContext = createContext();
 
-// Context is technically a functional component.
+// Contexts are essentially functional components. By passing children here,
+// any children <> tags referencing this tag from the parent class can access these properties.
 export function ColorThemeProvider({ children }) {
   const [colorTheme, setColorTheme] = useState(COLORS.darkMode);
 
