@@ -3,6 +3,7 @@ import Tweet from "./components/tweet/Tweet";
 import NavBar from "./components/navBar/NavBar";
 import ColorThemeToggle from "./components/ColorThemeToggle";
 import { ColorThemeProvider } from "./components/customHooks/ColorThemeContext.js";
+//import stephyAvatar from "../../stephy-avatar.jpg";
 // as of now, this class is not using App.css
 //import "./App.css";
 
