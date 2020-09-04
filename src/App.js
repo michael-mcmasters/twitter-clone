@@ -6,6 +6,8 @@ import ColorThemeToggle from "./components/ColorThemeToggle";
 import { ColorThemeProvider } from "./components/customHooks/ColorThemeContext.js";
 import stephyAvatar from "./stephy-avatar.jpg";
 import chrisAvatar from "./chris-avatar.jpg";
+import nateAvatar from "./nate-avatar.jpg";
+import daymanAvatar from "./dayman-avatar.jpg";
 
 export default function App() {
   const tweets = [
@@ -27,14 +29,14 @@ export default function App() {
       id: "2",
       name: "Nathan McMasters",
       userName: "NateMcMasters",
-      avatar: stephyAvatar,
+      avatar: nateAvatar,
       timeSincePost: "2h",
     },
     {
       id: "3",
       name: "Dayman McMasters",
       userName: "DaymanKnight",
-      avatar: stephyAvatar,
+      avatar: daymanAvatar,
       timeSincePost: "7h",
     },
   ];
