@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import { ColorThemeContext } from "../customHooks/ColorThemeContext.js";
 // each ../ goes up one directory
-//import noAvatarEgg from "../../noAvatarEgg.jpg";
-//import stephyAvatar from "../../stephy-avatar.jpg";
 
 export default function Tweet(props) {
   const colorTheme = useContext(ColorThemeContext);
+  console.log(props);
 
   return (
     <div style={postBackground(colorTheme)}>

@@ -1,11 +1,11 @@
 import React from "react";
+//import "./App.css";
 import Tweet from "./components/tweet/Tweet";
 //import NavBar from "./components/navBar/NavBar";
 import ColorThemeToggle from "./components/ColorThemeToggle";
 import { ColorThemeProvider } from "./components/customHooks/ColorThemeContext.js";
 import stephyAvatar from "./stephy-avatar.jpg";
-// as of now, this class is not using App.css
-//import "./App.css";
+import chrisAvatar from "./chris-avatar.jpg";
 
 export default function App() {
   const tweets = [
@@ -13,29 +13,29 @@ export default function App() {
       id: "0",
       name: "Stephy Garcia",
       userName: "StephyG",
+      avatar: stephyAvatar,
       timeSincePost: "16h",
-      avatar: { stephyAvatar },
     },
     {
       id: "1",
       name: "Chris Beardsley",
       userName: "ChrisBFriedChicken",
+      avatar: chrisAvatar,
       timeSincePost: "8h",
-      avatar: { stephyAvatar },
     },
     {
       id: "2",
       name: "Nathan McMasters",
       userName: "NateMcMasters",
+      avatar: stephyAvatar,
       timeSincePost: "2h",
-      avatar: { stephyAvatar },
     },
     {
       id: "3",
       name: "Dayman McMasters",
       userName: "DaymanKnight",
+      avatar: stephyAvatar,
       timeSincePost: "7h",
-      avatar: { stephyAvatar },
     },
   ];
 
@@ -56,8 +56,8 @@ export default function App() {
                 key={tweet.id}
                 name={tweet.name}
                 userName={tweet.userName}
+                avatar={tweet.avatar}
                 timeSincePost={tweet.timeSincePost}
-                avatar={stephyAvatar}
               ></Tweet>
             ))}
           </div>
