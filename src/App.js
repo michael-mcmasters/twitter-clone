@@ -1,9 +1,9 @@
-import React, { useEffect, useContext } from "react";
+import React from "react";
 import Tweet from "./components/tweet/Tweet";
-import NavBar from "./components/navBar/NavBar";
+//import NavBar from "./components/navBar/NavBar";
 import ColorThemeToggle from "./components/ColorThemeToggle";
 import { ColorThemeProvider } from "./components/customHooks/ColorThemeContext.js";
-//import stephyAvatar from "../../stephy-avatar.jpg";
+import stephyAvatar from "./stephy-avatar.jpg";
 // as of now, this class is not using App.css
 //import "./App.css";
 
@@ -14,24 +14,28 @@ export default function App() {
       name: "Stephy Garcia",
       userName: "StephyG",
       timeSincePost: "16h",
+      avatar: { stephyAvatar },
     },
     {
       id: "1",
       name: "Chris Beardsley",
       userName: "ChrisBFriedChicken",
       timeSincePost: "8h",
+      avatar: { stephyAvatar },
     },
     {
       id: "2",
       name: "Nathan McMasters",
       userName: "NateMcMasters",
       timeSincePost: "2h",
+      avatar: { stephyAvatar },
     },
     {
       id: "3",
       name: "Dayman McMasters",
       userName: "DaymanKnight",
       timeSincePost: "7h",
+      avatar: { stephyAvatar },
     },
   ];
 
@@ -49,9 +53,11 @@ export default function App() {
             {/* Center row ... Items here go in column up and down */}
             {tweets.map((tweet) => (
               <Tweet
+                key={tweet.id}
                 name={tweet.name}
                 userName={tweet.userName}
                 timeSincePost={tweet.timeSincePost}
+                avatar={stephyAvatar}
               ></Tweet>
             ))}
           </div>

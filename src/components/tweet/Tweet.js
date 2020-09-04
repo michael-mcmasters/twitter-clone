@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { ColorThemeContext } from "../customHooks/ColorThemeContext.js";
 // each ../ goes up one directory
-import noAvatarEgg from "../../noAvatarEgg.jpg";
-import stephyAvatar from "../../stephy-avatar.jpg";
+//import noAvatarEgg from "../../noAvatarEgg.jpg";
+//import stephyAvatar from "../../stephy-avatar.jpg";
 
 export default function Tweet(props) {
   const colorTheme = useContext(ColorThemeContext);
@@ -12,7 +12,7 @@ export default function Tweet(props) {
       <div style={container(colorTheme)}>
         {/* Left Row */}
         <div style={avatarContainer}>
-          <img style={avatar} src={stephyAvatar} alt="my description" />
+          <img style={avatar} src={props.avatar} alt="my description" />
         </div>
         {/* Center and Right Row */}
         <span style={topContainer(colorTheme)}>
