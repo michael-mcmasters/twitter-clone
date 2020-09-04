@@ -34,6 +34,8 @@ export default function App() {
     },
   ];
 
+  // ToDo: You can use position: fixed for the sides and they will stay in position no matter what.
+  // So that when we scroll, the left navbar and the right side won't scroll. Only the tweets will.
   return (
     <React.Fragment>
       <ColorThemeProvider>

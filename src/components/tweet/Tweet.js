@@ -85,7 +85,7 @@ export default function Tweet(props) {
       {/* Center and Right Row */}
       <span style={topContainer(colorTheme)}>
         <span style={primaryText(colorTheme)}>{props.name}</span>
-        <span style={secondaryText(colorTheme)}>{props.userName}</span>
+        <span style={secondaryText(colorTheme)}>@{props.userName}</span>
         <span style={secondaryText(colorTheme)}>·</span>
         <span style={secondaryText(colorTheme)}>{props.timeSincePost}</span>
       </span>
