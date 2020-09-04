@@ -48,9 +48,9 @@ export default function App() {
       <ColorThemeProvider>
         <div style={row}>
           {/* Left row */}
+          <ColorThemeToggle></ColorThemeToggle>
           <div>First</div>
           <div>Second</div>
-          <ColorThemeToggle></ColorThemeToggle>
           <div>
             {/* Center row ... Items here go in column up and down */}
             {tweets.map((tweet) => (

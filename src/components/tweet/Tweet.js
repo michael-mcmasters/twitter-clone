@@ -4,7 +4,6 @@ import { ColorThemeContext } from "../customHooks/ColorThemeContext.js";
 
 export default function Tweet(props) {
   const colorTheme = useContext(ColorThemeContext);
-  console.log(props);
 
   return (
     <div style={postBackground(colorTheme)}>
