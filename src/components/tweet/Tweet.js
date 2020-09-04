@@ -10,13 +10,21 @@ export default function Tweet(props) {
     <div style={postBackground(colorTheme)}>
       <div style={container(colorTheme)}>
         {/* Left Row */}
-        <img style={avatar} src={noAvatarEgg} alt="my description" />
+        <div style={avatarContainer}>
+          <img style={avatar} src={noAvatarEgg} alt="my description" />
+        </div>
         {/* Center and Right Row */}
         <span style={topContainer(colorTheme)}>
           <span style={primaryText(colorTheme)}>{props.name}</span>
           <span style={secondaryText(colorTheme)}>@{props.userName}</span>
           <span style={secondaryText(colorTheme)}>·</span>
           <span style={secondaryText(colorTheme)}>{props.timeSincePost}</span>
+          <div style={body()}>
+            Seminole Heights has a new colorful crosswalk outside Broward
+            Elementary as part of our Crosswalks to Classrooms initiative. Learn
+            how this street mural is designed to inspire kids on their way to
+            school while supporting
+          </div>
         </span>
       </div>
     </div>
@@ -40,17 +48,23 @@ function postBackground(colorTheme) {
 function container(colorTheme) {
   return {
     display: "flex",
-    margin: "10px",
+    padding: "15px",
   };
 }
 
+// Need to use this container so that margin affects the entire column.
+// If we only put the margin in the image selector, it would only apply to
+// the image's size, and the text would push back the margin if it were long enough to go below that column.
+const avatarContainer = {
+  marginRight: "10px",
+};
+
 // Size of picture
 const avatar = {
-  marginRight: "10px",
   position: "relative",
   overflow: "hidden",
-  width: "50px",
-  height: "50px",
+  width: "49px",
+  height: "49px",
 };
 
 // top of tweet (name, username, etc)
@@ -71,5 +85,14 @@ function secondaryText(colorTheme) {
   return {
     paddingLeft: "10px",
     color: colorTheme.textSec,
+  };
+}
+
+function body(colorTheme) {
+  return {
+    //whiteSpace: "initial",
+    //wordWrap: "break-word",
+    //display: "table",
+    display: "inline-block",
   };
 }
