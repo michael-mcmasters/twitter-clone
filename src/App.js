@@ -1,6 +1,6 @@
 import React from "react";
 //import "./App.css";
-import Tweets from "./components/tweet/Tweets";
+import Tweets from "./components/tweets/Tweets";
 //import NavBar from "./components/navBar/NavBar";
 import ColorThemeToggle from "./components/ColorThemeToggle";
 import { ColorThemeProvider } from "./components/customHooks/ColorThemeContext.js";
@@ -15,11 +15,13 @@ export default function App() {
         <div style={row}>
           {/* Left row */}
           <div>First</div>
-          <ColorThemeToggle></ColorThemeToggle>
+          <ColorThemeToggle>
+          </ColorThemeToggle>
           <div>Second</div>
           <div>
             {/* Center row ... Items here go in column up and down */}
-            <Tweets></Tweets>
+            <Tweets>
+            </Tweets>
             ))}
           </div>
           {/* Right row */}

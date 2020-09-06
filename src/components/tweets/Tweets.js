@@ -1,13 +1,13 @@
-// This component is a parent for each individual tweet component.
-// It holds logic for each tweet.
-
 import React from "react";
 import Tweet from "./Tweet";
+// each "../" goes up one directory
 import stephyAvatar from "../../stephy-avatar.jpg";
 import chrisAvatar from "../../chris-avatar.jpg";
 import nateAvatar from "../../nate-avatar.jpg";
 import daymanAvatar from "../../dayman-avatar.jpg";
 
+// This component is a parent for each individual tweet component.
+// It holds logic for each tweet.
 export default function Tweets() {
     const tweets = [
       {
@@ -40,7 +40,7 @@ export default function Tweets() {
       },
     ];
 
-    // Places each tweet over one another.
+    // Stacks tweets over one another.
     return (
       <React.Fragment>
         {tweets.map((tweet) => (

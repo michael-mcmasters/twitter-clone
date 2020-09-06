@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { ColorThemeContext } from "../customHooks/ColorThemeContext.js";
-// each ../ goes up one directory
 
 export default function Tweet(props) {
   const colorTheme = useContext(ColorThemeContext);
