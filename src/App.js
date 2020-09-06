@@ -6,31 +6,34 @@ import ColorThemeToggle from "./components/ColorThemeToggle";
 import { ColorThemeProvider } from "./components/customHooks/ColorThemeContext.js";
 
 export default function App() {
-
   // ToDo: You can use position: fixed for the sides and they will stay in position no matter what.
   // So that when we scroll, the left navbar and the right side won't scroll. Only the tweets will.
   return (
-    <React.Fragment>
-      <ColorThemeProvider>
+    <ColorThemeProvider>
+      <React.Fragment style={background(colorTheme)}>
         <div style={row}>
           {/* Left row */}
           <div>First</div>
-          <ColorThemeToggle>
-          </ColorThemeToggle>
+          <ColorThemeToggle></ColorThemeToggle>
           <div>Second</div>
           <div>
             {/* Center row ... Items here go in column up and down */}
-            <Tweets>
-            </Tweets>
+            <Tweets></Tweets>
             ))}
           </div>
           {/* Right row */}
           <div>Third</div>
           <div>Fourth</div>
         </div>
-      </ColorThemeProvider>
-    </React.Fragment>
+      </React.Fragment>
+    </ColorThemeProvider>
   );
+}
+
+function background(colorTheme) {
+  return {
+    backgroundColor: colorTheme.background,
+  };
 }
 
 const row = {
