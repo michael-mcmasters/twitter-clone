@@ -2,16 +2,22 @@ import React from "react";
 //import "./App.css";
 import Tweets from "./tweets/Tweets";
 import ColorThemeToggle from "./ColorThemeToggle";
-//import NavBar from "./components/navBar/NavBar";
+import NavBar from "./navBar/NavBar";
+import { ColorThemeContext } from "./customHooks/ColorThemeContext";
 
 export default function Program() {
   // ToDo: You can use position: fixed for the sides and they will stay in position no matter what.
   // So that when we scroll, the left navbar and the right side won't scroll. Only the tweets will.
+  const colorTheme = React.useContext(ColorThemeContext);
+
+  console.log(colorTheme);
+
   return (
     <React.Fragment>
-      <div>
+      <div style={background(colorTheme)}>
         <div style={row}>
           {/* Left row */}
+          <NavBar></NavBar>
           <div>First</div>
           <ColorThemeToggle></ColorThemeToggle>
           <div>Second</div>
