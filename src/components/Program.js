@@ -11,25 +11,25 @@ export default function Program() {
   const colorTheme = React.useContext(ColorThemeContext);
 
   return (
-    <React.Fragment>
-      <div style={background(colorTheme)}>
-        <div style={row}>
-          <ColorThemeToggle></ColorThemeToggle>
-          <NavBar></NavBar>
-          {/* this div makes everything go up and down */}
-          <div>
-            <Tweets></Tweets>
-          </div>
-          <div>Third</div>
-          <div>Fourth</div>
+    <div style={background(colorTheme)}>
+      <div style={row}>
+        <ColorThemeToggle></ColorThemeToggle>
+        <NavBar></NavBar>
+        {/* this div makes everything go up and down */}
+        <div>
+          <Tweets></Tweets>
         </div>
+        <div>Third</div>
+        <div>Fourth</div>
       </div>
-    </React.Fragment>
+    </div>
   );
 }
 
 function background(colorTheme) {
   return {
+    //height: "1000px",
+    //backgroundSize: "length",
     backgroundColor: colorTheme.background,
   };
 }
