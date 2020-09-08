@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { ColorThemeContext } from "../customHooks/ColorThemeContext.js";
+import { Theme } from "../../App.js";
 
 export default function Tweet(props) {
-  const colorTheme = useContext(ColorThemeContext);
+  const colorTheme = useContext(Theme);
 
   return (
     <div style={postBackground(colorTheme)}>
