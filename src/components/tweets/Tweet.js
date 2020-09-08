@@ -32,11 +32,11 @@ export default function Tweet(props) {
 // Background and borders
 function postBackground(colorTheme) {
   return {
-    height: "200px",
+    //height: "200px",
     width: "450px",
-    borderLeft: "3px solid #38444d",
-    borderTop: "3px solid #38444d",
-    borderRight: "3px solid #38444d",
+    borderLeft: "1px solid #38444d",
+    borderTop: "1px solid #38444d",
+    borderRight: "1px solid #38444d",
     backgroundColor: colorTheme.background,
   };
 }
@@ -78,6 +78,7 @@ function topContainer(colorTheme) {
 function primaryText(colorTheme) {
   return {
     fontWeight: "bold",
+    fontSize: "15px",
     color: colorTheme.textPrime,
   };
 }
@@ -95,5 +96,6 @@ function body(colorTheme) {
     //wordWrap: "break-word",
     //display: "table",
     display: "inline-block",
+    fontSize: "15px",
   };
 }
