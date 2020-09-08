@@ -14,14 +14,12 @@ export default function Program() {
     <React.Fragment>
       <div style={background(colorTheme)}>
         <div style={row}>
-          {/* Left row */}
           <ColorThemeToggle></ColorThemeToggle>
           <NavBar></NavBar>
+          {/* this div makes everything go up and down */}
           <div>
-            {/* Center row ... Items here go in column up and down */}
             <Tweets></Tweets>
           </div>
-          {/* Right row */}
           <div>Third</div>
           <div>Fourth</div>
         </div>

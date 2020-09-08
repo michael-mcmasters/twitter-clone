@@ -47,6 +47,7 @@ function container(colorTheme) {
   return {
     display: "flex",
     padding: "15px",
+    fontSize: "15px",
   };
 }
 
@@ -78,14 +79,13 @@ function topContainer(colorTheme) {
 function primaryText(colorTheme) {
   return {
     fontWeight: "bold",
-    fontSize: "15px",
     color: colorTheme.textPrime,
   };
 }
 
 function secondaryText(colorTheme) {
   return {
-    paddingLeft: "10px",
+    paddingLeft: "5px",
     color: colorTheme.textSec,
   };
 }
@@ -96,6 +96,5 @@ function body(colorTheme) {
     //wordWrap: "break-word",
     //display: "table",
     display: "inline-block",
-    fontSize: "15px",
   };
 }
