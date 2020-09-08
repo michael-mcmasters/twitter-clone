@@ -26,10 +26,9 @@ export default function Program() {
   );
 }
 
+// As long as the content inside of this div fills the web page, the entire page will have this background picture
 function background(colorTheme) {
   return {
-    //height: "1000px",
-    //backgroundSize: "length",
     backgroundColor: colorTheme.background,
   };
 }

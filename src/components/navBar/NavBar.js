@@ -1,12 +1,17 @@
 import React from "react";
 import { ColorThemeContext } from "../customHooks/ColorThemeContext.js";
+import { Button } from "@material-ui/core";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import HomeIcon from "@material-ui/icons/Home";
 
 export default function NavBar() {
   const colorTheme = React.useContext(ColorThemeContext);
 
   return (
     <div style={container(colorTheme)}>
-      <div style={twitterImage}>Twitter Image</div>
+      {/* <div style={twitterImage}>Twitter Image</div> */}
+      <TwitterIcon></TwitterIcon>
+      <HomeIcon />
       <div style={text}>Home</div>
       <div style={text}>Explore</div>
       <div style={text}>Notifications</div>
@@ -16,6 +21,7 @@ export default function NavBar() {
       <div style={text}>Profile</div>
       <div style={text}>More</div>
       <button style={tweetButton}>Tweet</button>
+      <Button color="primary">text</Button>
       <div style={accountInfo}>Account</div>
     </div>
   );
