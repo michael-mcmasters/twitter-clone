@@ -1,0 +1,10 @@
+.navbarOption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbarOption:hover {
+  background-color: #e8f5fe;
+  border-radius: 30px;
+}
